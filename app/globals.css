@@ -3,20 +3,19 @@
 @tailwind utilities;
 @tailwind layer;
 
-
 @layer components {
   .container {
     @apply mobile:max-w-[600px] tablet:max-w-[900px] desktop:max-w-[1200px] extra_desktop:max-w-[1536px] mx-[auto];
   }
   .heading-1 {
-    @apply  text-[30px] tablet:text-[48px] leading-[1.5] font-[600];
+    @apply text-[30px] tablet:text-[48px] leading-[1.5] font-[600];
   }
 
   .heading-2 {
     @apply text-[18px] tablet:text-[24px] leading-[1.5] font-[600];
   }
 
-  .content-18 { 
+  .content-18 {
     @apply text-[18px] font-[400];
   }
 
@@ -25,11 +24,32 @@
   }
 
   .content-14 {
-    @apply  text-[12px] tablet:text-[14px] font-[400];
+    @apply text-[12px] tablet:text-[14px] font-[400];
   }
 }
-
-.dot{
+.slick-list {
+  height: 300px;
+  padding-top: 40px !important;
+  display: flex;
+  align-items: center;
+}
+.slick-current.slick-slide {
+  transform: scale(1.12);
+  opacity: 1;
+  max-width: 100%;
+}
+.slick-active.slick-slide:nth-of-type(1) .border {
+  border-left: none !important;
+}
+.slick-active.slick-slide:nth-child(2) .border {
+  border-right: none !important;
+}
+.slick-slide {
+  transform: scale(0.88);
+  opacity: 0.6;
+  transition: all 0.2s ease-in;
+}
+.dot {
   --size: 8px;
   width: var(--size);
   height: var(--size);
@@ -56,5 +76,21 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .slick-list {
+    height: auto;
+  }
+  .slick-current.slick-slide {
+    transform: scale(1);
+    opacity: 1;
+    max-width: 100%;
+  }
+  .slick-slide {
+    transform: scale(1);
+    opacity: 0.6;
+    transition: opacity ease-in 0.2s;
   }
 }
