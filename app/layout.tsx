@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { NextUIProvider } from "@nextui-org/react";
+import Header from "./components/layout/header";
+import Footer from "./components/layout/footer";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body className={inter.className}>
-        <NextUIProvider>{children}</NextUIProvider>
+        <Header />
+
+        {children}
+
+        <Footer />
       </body>
     </html>
   );

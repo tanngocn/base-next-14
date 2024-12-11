@@ -1,29 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind layer;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+@layer components {
+  .container {
+    @apply mobile:max-w-[600px] tablet:max-w-[900px] desktop:max-w-[1200px] extra_desktop:max-w-[1536px] mx-[auto];
+  }
+  .heading-1 {
+    @apply  text-[30px] tablet:text-[48px] leading-[1.5] font-[600];
+  }
+
+  .heading-2 {
+    @apply text-[18px] tablet:text-[24px] leading-[1.5] font-[600];
+  }
+
+  .content-18 { 
+    @apply text-[18px] font-[400];
+  }
+
+  .content-16 {
+    @apply text-[16px] font-[400];
+  }
+
+  .content-14 {
+    @apply  text-[12px] tablet:text-[14px] font-[400];
+  }
 }
 
+.dot{
+  --size: 8px;
+  width: var(--size);
+  height: var(--size);
+  background-color: white;
+  border-radius: 50%;
+}
+
+:root {
+  --white: 255, 255, 255;
+}
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--white);
 }
 
 @layer utilities {
