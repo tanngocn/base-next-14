@@ -60,6 +60,7 @@ const AboutProduct = () => {
                 {imagesAboutProduct[color]?.map((item: StaticImageData, index: number) => (
                   <Image
                     src={item}
+                    key={index}
                     alt="product image"
                     onClick={() => viewImage(index)}
                     className={cn('size-[40px] tablet:size-[56px] cursor-pointer border border-white', {

@@ -16,6 +16,7 @@ import NoriToday from "./components/views/home/NoriToday";
 import QAProduct from "./components/views/home/QAProduct";
 import IronHot from "./components/views/home/IronHot";
 import QuizSection from "./components/views/home/Quiz";
+import PlanSection from "./components/views/home/PlanSection";
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
           />
         }
       />
+      <PlanSection />
       <IronHot />
       <PickDress />
       <DetailProduct />

@@ -36,7 +36,7 @@ export function QuizDialog({
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
 
-      <DialogContent className="max-w-full px-[16px] tablet:max-w-[600px] tablet:px-[24px]">
+      <DialogContent className="tablet:max-w-full max-w-[calc(100%-32px)] px-[8px] tablet:px-[16px] tablet:max-w-[600px] tablet:px-[24px]">
         <DialogClose asChild>
           <div className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
             <X className="h-4 w-4" onClick={onClose} />
@@ -64,7 +64,7 @@ export function QuizDialog({
           </DialogTitle>
           <DialogDescription></DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4 grid-cols-1 tablet:grid-cols-3">
+        <div className="grid gap-4 py-4 grid-cols-3 tablet:grid-cols-3">
           {currentAnswer.map((item, index: number) => (
             <div
               className="flex flex-col cursor-pointer p-1 items-center justify-center"
@@ -80,7 +80,7 @@ export function QuizDialog({
                 alt="image-quiz"
                 className="h-full w-full"
               />
-              <span className="p-4">{item.label}</span>
+              <span className="content-14 tablet:content-16 p-4">{item.label}</span>
             </div>
           ))}
         </div>

@@ -82,6 +82,7 @@ body {
 @media screen and (max-width: 600px) {
   .slick-list {
     height: auto;
+      padding-top: 0px !important;
   }
   .slick-current.slick-slide {
     transform: scale(1);

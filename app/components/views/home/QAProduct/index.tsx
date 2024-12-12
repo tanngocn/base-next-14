@@ -16,7 +16,7 @@ const QAProduct = () => {
         <>
           <div className="flex flex-col gap-2 tablet:gap-6 w-full">
             {ironOut?.map((item, index: number) => (
-              <div className="flex flex-col gap-4 py-6 border-b border-black  tablet:max-w-[calc(100%-120px)]">
+              <div className="flex flex-col gap-4 py-6 border-b border-black  tablet:max-w-[calc(100%-120px)]" key={index}>
                 <h3 className="heading-2 ">{item.title}</h3>
                 <p className="content-16 ">{item.content}</p>
               </div>
